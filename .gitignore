@@ -1,3 +1,8 @@
 # Ignore all python cache files
 *.pyc
 __pycache__/
+
+# Ignore built files
+build/
+*.egg-info/
+dist/
