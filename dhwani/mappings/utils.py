@@ -1,3 +1,5 @@
+__all__ = ["is_supported", "print_current_support", "get_lang_mappings"]
+
 import os
 import yaml
 
@@ -11,13 +13,10 @@ def get_supported_conversions():
         
     :rtype: Dictionary.
     """
-    with open(
-        os.path.join(
-            os.path.abspath(os.path.dirname(__file__)), "supported_conversions.yaml"
-        ),
-        "r",
-        encoding="utf-8",
-    ) as f:
+    sc_file_basename = "supported_conversions.yaml"
+    sc_file_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), sc_file_basename)
+
+    with open(sc_file_path, "r", encoding="utf-8") as f:
         supported_dict = yaml.safe_load(f)
 
     if supported_dict is None:
@@ -60,6 +59,38 @@ def print_current_support():
     for i in supported_dict:
         print("{0} => {1}".format(i, " ".join(supported_dict[i])))
     print("\nAll language codes are as given in ISO 639-3.")
+
+
+def get_lang_mappings(src_lang_code: str, dest_lang_code: str):
+    """Returns the mappings from source language to destination language
+    as a list.
+
+    :param src_lang_code: ISO 639-3 code of the source language.
+    :type src_lang_code: str
+    
+    :param dest_lang_code: ISO 639-3 code of the destination language.
+    :type src_lang_code: str
+    
+    :return: List with each element as a dictionary, where keys need to be replaced
+        by values.
+    :rtype: List.
+
+    """
+
+    if not is_supported(src_lang_code, dest_lang_code):
+        utils.print_current_support()
+        raise NotImplementedError("The given conversion is not supported.")
+
+    lang_file_base_name = src_lang_code + "_" + dest_lang_code + ".yaml"
+    lang_file_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), lang_file_base_name)
+
+    with open(lang_file_path, "r", encoding="utf-8") as f:
+        lang_mapping_list = yaml.safe_load(f)
+
+    # Check for empty file
+    # FIXME
+
+    return lang_mapping_list
 
 
 if __name__ == "__main__":
