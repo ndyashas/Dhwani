@@ -13,7 +13,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
-
+import dhwani
 
 # -- Project information -----------------------------------------------------
 
@@ -22,7 +22,7 @@ copyright = '2020, Yashas ND'
 author = 'Yashas ND'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.2'
+release = dhwani.__version__
 
 
 # -- General configuration ---------------------------------------------------
