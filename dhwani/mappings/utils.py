@@ -1,4 +1,4 @@
-__all__ = ["is_supported", "print_current_support", "get_lang_mappings"]
+__all__ = ["is_supported", "print_current_support", "get_lang_mappings", "get_supported_conversions"]
 
 import os
 import yaml
