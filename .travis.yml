@@ -4,6 +4,7 @@ python:
   - "3.6"
 
 install:
+  - pip3 install -r requirements.txt
   - pip3 install pytest==5.4.3 timeout-decorator==0.4.1
   
 script:
