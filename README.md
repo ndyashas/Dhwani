@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/dhwani/badge/?version=latest)](https://dhwani.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/dhwani/badge/?version=latest)](https://dhwani.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.com/ndyashas/Dhwani.svg?branch=master)](https://travis-ci.com/ndyashas/Dhwani)
 
 # Dhwani
 English to Indic language phonetic conversion engine. Read more about the project [here](https://ndyashas.github.io/projects/Dhwani.html).

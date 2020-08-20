@@ -1,0 +1,10 @@
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip3 install pytest==5.4.3 timeout-decorator==0.4.1
+  
+script:
+  - python3 -m pytest --cache-clear --tb=long --showlocals
