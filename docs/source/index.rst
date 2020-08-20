@@ -6,13 +6,17 @@
 Dhwani
 ==================================
 
+English to Indic language phonetic conversion engine. Read more about the project `here <https://ndyashas.github.io/projects/Dhwani.html>`_.
+
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
+   install
    dhwani.core
    examples
-
+   
+   
 Indices and tables
 ==================
 
